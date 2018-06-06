@@ -74,6 +74,23 @@ module.exports = {
 
     // you can set by youself according to actual condition
     assetsPublicPath: './',
+    proxyTable: {
+      '/api': {
+        target: 'http://127.0.0.1:5000',
+        changeOrigin: true,
+        pathRewrite: {
+          '^/api': ''
+        }
+      },
+      '/default': {
+        target: 'https://api-dev',
+        secure: true,
+        changeOrigin: true,
+        pathRewrite: {
+          '^/default': ''
+        }
+      }
+    },
 
     /**
      * Source Maps
