@@ -52,7 +52,6 @@ export default {
       }
       putResult(nac).then(response => {
         console.log(response.data.data)
-        const converter = new showdown.Converter()
         this.report = response.data.data
       }).catch(err => {
         console.log(err)

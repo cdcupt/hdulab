@@ -80,7 +80,7 @@
       },
       Confirm() {
         alert(this.fileList)
-        var a = { 'name': this.name, 'content': this.textarea, 'author': "柴代晨" }
+        var a = { 'name': this.name, 'content': this.textarea, 'author': '柴代晨' }
         putWork(a)
         this.Cancel()
       },

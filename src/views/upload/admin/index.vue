@@ -100,7 +100,7 @@ export default {
           .catch(() => {})
       }
     },
-    newWorkDialogClose(){
+    newWorkDialogClose() {
       this.newWorkVisible = false
     }
   }
