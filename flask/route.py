@@ -293,15 +293,15 @@ class Whitels(Resource):
 ##
 ## Actually setup the Api resource routing here
 ##
-api.add_resource(Index,'/')
-api.add_resource(STList,'/stlist')
-api.add_resource(DefaultData,'/table/list')
-api.add_resource(HomwWork,'/work')
-api.add_resource(Problem,'/problem')
-api.add_resource(ProblemList,'/problem/list')
-api.add_resource(Result,'/result')
-api.add_resource(Nofluxdt,'/nofluxdt')
-api.add_resource(Whitels,'/whitels')
+api.add_resource(Index,'/api')
+api.add_resource(STList,'/api/stlist')
+api.add_resource(DefaultData,'/api/table/list')
+api.add_resource(HomwWork,'/api/work')
+api.add_resource(Problem,'/api/problem')
+api.add_resource(ProblemList,'/api/problem/list')
+api.add_resource(Result,'/api/result')
+api.add_resource(Nofluxdt,'/api/nofluxdt')
+api.add_resource(Whitels,'/api/whitels')
 
 if __name__ == '__main__':
     app.run(debug=True)

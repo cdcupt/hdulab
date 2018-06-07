@@ -66,7 +66,9 @@ export default {
     fetchData() {
       this.listLoading = true
       getWork(this.listQuery).then(response => {
-        this.list = response.data.data.items
+        if (response.data.data.items != null) {
+          this.list = response.data.data.items
+        }
         this.listLoading = false
       })
     },
