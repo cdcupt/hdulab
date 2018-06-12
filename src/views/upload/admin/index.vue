@@ -43,7 +43,8 @@
   </template>
 
 <script>
-import { getWork, delWork } from '@/api/upload'
+import { delWork } from '@/api/upload'
+import { fetchList } from '@/api/problem'
 import NewWork from './components/NewWork'
 export default {
   components: { NewWork },
@@ -56,7 +57,11 @@ export default {
       newOPVisible: false,
       multiSelects: [],
       ipSelects: [],
-      nowRow: 0
+      nowRow: 0,
+      listQuery: {
+        page: 1,
+        limit: 10
+      }
     }
   },
   created() {
@@ -65,7 +70,7 @@ export default {
   methods: {
     fetchData() {
       this.listLoading = true
-      getWork(this.listQuery).then(response => {
+      fetchList(this.listQuery).then(response => {
         if (response.data.data.items != null) {
           this.list = response.data.data.items
         }

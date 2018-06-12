@@ -29,7 +29,11 @@ export default {
     return {
       content: content,
       title: '',
-      report: ''
+      report: '',
+      listQuery: {
+        content: this.content,
+        name: this.name
+      }
     }
   },
   created() {
@@ -46,11 +50,7 @@ export default {
       })
     },
     submit() {
-      const nac = {
-        name: this.$route.params.id,
-        result: this.content
-      }
-      putResult(nac).then(response => {
+      putResult(this.content).then(response => {
         console.log(response.data.data)
         this.report = response.data.data
       }).catch(err => {
@@ -60,5 +60,6 @@ export default {
   }
 }
 </script>
+
 
 

@@ -1,0 +1,1 @@
+webpackJsonp([0],{"TVC+":function(t,e,a){"use strict";e.a=function(t){return Object(r.a)({url:"/api/problem/list",method:"get",params:t})},e.b=function(t){return Object(r.a)({url:"/api/problem",method:"get",params:{name:t}})};var r=a("vLgD")}});

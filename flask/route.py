@@ -14,7 +14,7 @@ import os
 
 app = Flask(__name__)
 api = Api(app)
-uri = "mongodb://admin:123456@localhost:27017/"
+uri = "mongodb://cdcupt:123456@localhost:27017/"
 db = MongoClient(uri)['student']
 
 DDATA = [
@@ -147,22 +147,21 @@ class ProblemList(Resource):
         return response
 
 class Result(Resource):
-    def get(self):
+    '''def get(self):
         args=request.args.to_dict()
         temp=db['problem'].find_one({'name':args['name']})
         item={"date":temp['date'],"author":temp['author'],"difficulty":temp['difficulty'],"status":temp['status'],"name":temp['name'], "content":temp['content']}
         print item
         response={'code':200,'data':item}
-        return response
+        return response'''
 
     def put(self):
-        args=request.args.to_dict()
-        """ print 'cd ./'+args[name]
-        os.system('cd ./'+args[name])
-        fp = open("scnt.v", "w")
-        fp.write(args[content])
+	args=request.args.to_dict()
+	os.system('cd /home/cdcupt/qsim/')
+        fp = open("/home/cdcupt/qsim/scnt.v", "w")
+        fp.write(args['content'])
         fp.close()
-        os.system('./start') """
+        os.system('/home/cdcupt/qsim/start.sh')
         fp = open("/home/cdcupt/qsim/report.txt", "r")
         response={'code':200,'data':fp.read()}
         fp.close()
