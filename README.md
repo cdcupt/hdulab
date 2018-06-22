@@ -11,6 +11,9 @@ Another is vue project
 ## environmental dependence
 
 ### linux platform
+
 python2.x(with other dependent package, you can find in "import "xxx"")
+
 mongodb
+
 vue
